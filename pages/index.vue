@@ -3,22 +3,22 @@
     <section class="intro">
       <h1>Get the latest tech news</h1>
     </section>
-    <section class="featured-posts">
-      <PostPreview />
+    <section class="featured-post">
+      <post-list></post-list>
     </section>
   </div>
 </template>
-
+ 
 <script>
-import PostPreview from '@/components/Posts/PostPreview'
-	export default {
-		components : {
-			PostPreview
-		}
+import PostList from "@/components/Posts/PostList"
+  export default {
+    components: {
+      PostList
+    }
+  }
 
-	}
+</script>
 
-</script> 
 
 <style scoped>
 
@@ -27,6 +27,7 @@ import PostPreview from '@/components/Posts/PostPreview'
   position: relative;
   padding: 30px;
   box-sizing: border-box;
+  background-image: url('~assets/images/main-page-background.jpg');
   background-position: center;
   background-size: cover;
 }
@@ -52,14 +53,13 @@ import PostPreview from '@/components/Posts/PostPreview'
   }
 }
 
-.featured-posts {
-  display: flex;
-  padding: 20px;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+.featured-post {
+ 	display: flex;
+  	padding: 20px;
+  	box-sizing: border-box;
+  	flex-wrap: wrap;
+  	align-items: center;
+  	justify-content: center;
 }
-
 
 </style>

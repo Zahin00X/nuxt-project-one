@@ -1,15 +1,46 @@
 <template>
-    <nuxt-link :to=" '/posts/' + 1" class="post-preview">
+    <nuxt-link :to=" '/posts/' + id" class="post-preview">
       <article>
-        <div class="post-thumbnail" style="background-image: url('https://news.cgtn.com/news/2020-11-02/Analysis-China-is-betting-on-science-and-tech-like-never-before-V68V871ula/img/871ca9ce8b9941088260b6ed4ced4eeb/871ca9ce8b9941088260b6ed4ced4eeb.jpeg')"></div>
-        <div class="post-content"></div>
+        <div 
+        class="post-thumbnail" 
+        :style="{backgroundImage: 'url(' + thumbnail +')'}">
+        </div>
         <div class="post-content">
-          <h1>post title 1</h1>
-          <p>Preview Text 1</p>
+          <h1>{{ title }}</h1>
+          <p>{{ previewText }}</p>
         </div>
       </article>
     </nuxt-link>
 </template>
+
+<script>
+  export default {
+    name: 'PostPreview',
+    props: {
+      id : {
+
+        type: String,
+        required: true
+      },
+      title: {
+        type: String,
+        required: true
+      },
+      previewText : {
+
+        type: String,
+        required: true
+
+      },
+      thumbnail: {
+        type : String,
+        required: true
+      }
+
+    }
+  }
+</script>
+
 
 <style scoped>
     .post-preview {
