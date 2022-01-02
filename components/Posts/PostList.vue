@@ -1,6 +1,7 @@
 <template>
     <section class="post-list">
         <PostPreview
+			:is-admin="isAdmin"
 	        id="1"
 	        thumbnail="https://news.cgtn.com/news/2020-11-02/Analysis-China-is-betting-on-science-and-tech-like-never-before-V68V871ula/img/871ca9ce8b9941088260b6ed4ced4eeb/871ca9ce8b9941088260b6ed4ced4eeb.jpeg"
 	        title="Hello There 1!"
@@ -26,6 +27,12 @@ import PostPreview from '@/components/Posts/PostPreview'
 	export default {
 		components : {
 			PostPreview
+		},
+		props: {
+			isAdmin : {
+				type : Boolean,
+				required : false
+			}
 		}
 
 	}
