@@ -4,7 +4,7 @@
       <h1>Get the latest tech news</h1>
     </section>
     <section class="featured-post">
-      <post-list></post-list>
+      <post-list :posts="loadedPosts"></post-list>
     </section>
   </div>
 </template>
@@ -14,6 +14,32 @@ import PostList from "@/components/Posts/PostList"
   export default {
     components: {
       PostList
+    },
+    data()
+    {
+      return{
+        loadedPosts: [
+          {
+            id: '1',
+            title: 'My awesome post',
+            previewText:'Super amazing, thanks for that!',
+            thumbnail: 'https://news.cgtn.com/news/2020-11-02/Analysis-China-is-betting-on-science-and-tech-like-never-before-V68V871ula/img/871ca9ce8b9941088260b6ed4ced4eeb/871ca9ce8b9941088260b6ed4ced4eeb.jpeg'
+          },
+          {
+            id: '2',
+            title: 'My cool post',
+            previewText:'Yes! It is cool!',
+            thumbnail: 'https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F930116744%2F960x0.jpg%3Ffit%3Dscale'
+          },
+          {
+            id: '3',
+            title: 'My rad post',
+            previewText:'Yes! It is rad!',
+            thumbnail: 'https://www.acquisition-international.com/wp-content/uploads/2020/01/tech-cruve.jpg'
+          }
+
+        ]
+      }
     }
   }
 

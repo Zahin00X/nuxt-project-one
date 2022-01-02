@@ -1,24 +1,14 @@
 <template>
     <section class="post-list">
         <PostPreview
+			v-for="post in posts"
+			:key="post.id"
 			:is-admin="isAdmin"
-	        id="1"
-	        thumbnail="https://news.cgtn.com/news/2020-11-02/Analysis-China-is-betting-on-science-and-tech-like-never-before-V68V871ula/img/871ca9ce8b9941088260b6ed4ced4eeb/871ca9ce8b9941088260b6ed4ced4eeb.jpeg"
-	        title="Hello There 1!"
-	        previewText="This is my first post!"	
+	        :id="post.id"
+	        :thumbnail="post.thumbnail"
+	        :title="post.title"
+	        :previewText="post.previewText "	
   	    />
-        <PostPreview
-	        id="2"
-	        thumbnail="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F930116744%2F960x0.jpg%3Ffit%3Dscale"
-	        title="Hello There 2!"
-	        previewText="This is my second post!"	
-	    />
-        <PostPreview
-	        id="3"
-	        thumbnail="https://www.acquisition-international.com/wp-content/uploads/2020/01/tech-cruve.jpg"
-	        title="Hello There 3!"
-	        previewText="This is my third post!"	
-	    />
     </section>
 </template>
 
@@ -32,6 +22,10 @@ import PostPreview from '@/components/Posts/PostPreview'
 			isAdmin : {
 				type : Boolean,
 				required : false
+			},
+			posts : {
+				type : Array,
+				required : true
 			}
 		}
 
