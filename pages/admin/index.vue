@@ -4,7 +4,7 @@
             <AppButton @click="$router.push('/admin/new-post')">Create Post</AppButton>
         </section>
         <section class="existing-posts"></section>
-        <h1>Exisiting Posts</h1>
+        <h1>Existing Posts</h1>
         <post-list isAdmin></post-list>
     </div>
 </template>
