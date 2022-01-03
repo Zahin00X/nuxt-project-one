@@ -20,9 +20,11 @@ const createStore = () => {
         getters:{
             loadedPosts(state)
             {
-                return state.loadedPosts
+                return state.loadedPosts;
             }
 
         }
     })
 }
+
+export default createStore;
