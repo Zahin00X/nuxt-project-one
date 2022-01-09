@@ -25,7 +25,7 @@ export default {
                 title: 'My awesome post',
                 content: 'Super amazing, thanks for that!',
                 thumbnailLink: 'https://assets.thehansindia.com/h-upload/2021/07/31/1092805-tech.webp'
-            } 
+            }
         }
     }
 

@@ -18,11 +18,10 @@
 
 export default {
 
-  asyncData(context)
+  asyncData(context, callback)
   {
-    return new Promise((resolve) =>{
-      setTimeout(()=>{
-      resolve({
+    setTimeout(()=>{
+      callback(null,{
         loadedPost: {
               id:"1",
               title: "First Post (ID: "+ context.route.params.id + ")",
@@ -34,13 +33,6 @@ export default {
         }
       })
     } ,800)
-    }).then(data => {
-      return data
-    })
-    .catch(e =>{
-      context.error(new Error())
-    }) 
-    
   }
 
 }
