@@ -3,7 +3,7 @@
     <section class="post">
         <h1 class="post-title">{{ loadedPost.title }}</h1>
         <div class="post-details">
-            <div class="post-detail">{{ loadedPost.updatedDate }}</div>
+            <div class="post-detail">Last updated on {{ loadedPost.updatedDate }}</div>
             <div class="post-detail">Written by {{ loadedPost.author }}</div>
         </div>
         <p class="post-content">{{ loadedPost.content }}</p>
@@ -15,24 +15,19 @@
 </template>
 
 <script>
+import axios from 'axios'
 
 export default {
 
-  asyncData(context, callback)
+  asyncData(context)
   {
-    setTimeout(()=>{
-      callback(null,{
-        loadedPost: {
-              id:"1",
-              title: "First Post (ID: "+ context.route.params.id + ")",
-              previewText: "This is our first post",
-              author: 'Zahin',
-              updatedDate: new Date(),
-              content: 'Some dummy content',
-              thumbnail: "https://news.cgtn.com/news/2020-11-02/Analysis-China-is-betting-on-science-and-tech-like-never-before-V68V871ula/img/871ca9ce8b9941088260b6ed4ced4eeb/871ca9ce8b9941088260b6ed4ced4eeb.jpeg"
-        }
-      })
-    } ,800)
+    return axios.get('https://nuxt-blog-af5c6-default-rtdb.asia-southeast1.firebasedatabase.app/posts/' + context.params.id + '.json')
+    .then( res => {
+      return {
+        loadedPost: res.data
+      }
+    })
+    .catch(e => context.error(e))    
   }
 
 }

@@ -18,9 +18,10 @@ import AdminPostForm from '~/components/Admin/AdminPostForm.vue'
         methods:{
           onSubmitted(postData)
           {
-            axios.post('https://nuxt-blog-af5c6-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json', postData)
-            .then(result => console.log(result))
-            .catch(e => console.log(e))
+            this.$store.dispatch('addPost', postData)
+            .then(() => {
+              this.$router.push("/admin")
+            })
           }
         }
     }
