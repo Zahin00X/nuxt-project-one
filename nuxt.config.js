@@ -1,5 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+    
+
   head: {
     title: 'WD Blog',
     htmlAttrs: {
@@ -16,11 +18,15 @@ export default {
   },
 
   loading: { 
-    color: 'FF0000',
-    height: '10px',
-    duration: 5000,
+    color: '#FF0000',
+    height: '5px',
+    duration: 500000,
     failedColor: 'yellow',
     throttle: 0
+  },
+  loadingIndicator: {
+    name: 'circle',
+    color: '#fa923f'
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -36,7 +42,10 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    
+
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
