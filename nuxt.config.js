@@ -1,18 +1,26 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt-project-one',
+    title: 'WD Blog',
     htmlAttrs: {
       lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'My cool web development blog' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
            { rel: 'stylesheet', href:"https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"}],
+  },
+
+  loading: { 
+    color: 'FF0000',
+    height: '10px',
+    duration: 5000,
+    failedColor: 'yellow',
+    throttle: 0
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
