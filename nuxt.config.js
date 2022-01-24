@@ -30,7 +30,9 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    '~assets/styles/main.css'
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -60,5 +62,9 @@ export default {
         component: resolve(__dirname, 'pages/index.vue')
       })
     }
+  },
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
   }
 }
