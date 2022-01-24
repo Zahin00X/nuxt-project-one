@@ -18,10 +18,10 @@ export default {
   },
 
   loading: { 
-    color: '#FF0000',
+    color: '#45ff17',
     height: '5px',
     duration: 500000,
-    failedColor: 'yellow',
+    failedColor: '#e8090d',
     throttle: 0
   },
   loadingIndicator: {
@@ -51,5 +51,14 @@ export default {
   build: {},
   env: {
     baseUrl : process.env.BASE_URL || 'https://nuxt-blog-af5c6-default-rtdb.asia-southeast1.firebasedatabase.app' 
+  },
+  router: {
+    extendRoutes(routes, resolve)
+    {
+      routes.push({
+        path: '*',
+        component: resolve(__dirname, 'pages/index.vue')
+      })
+    }
   }
 }
