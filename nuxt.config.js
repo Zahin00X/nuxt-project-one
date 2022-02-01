@@ -45,9 +45,14 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    
+    '@nuxtjs/axios',
 
   ],
+
+  axios: {
+      baseURL:  process.env.BASE_URL || 'https://nuxt-blog-af5c6-default-rtdb.asia-southeast1.firebasedatabase.app',
+      credentials: false
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
@@ -66,5 +71,9 @@ export default {
   transition: {
     name: 'fade',
     mode: 'out-in'
-  }
+  },
+  plugins: [
+    '~plugins/core-components.js',
+    '~plugins/date-filter.js'
+  ]
 }
